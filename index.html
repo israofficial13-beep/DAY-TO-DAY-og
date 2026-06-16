@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DAY2DAY - Authentic Kerala Cuisine | Vennikkulam</title>
-    <!-- Tailwind CSS for modern responsive styling -->
+    <!-- Tailwind CSS for high-fidelity responsive layout styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Premium font integration -->
+    <!-- Premium Google Fonts integration -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- GunDB Decentralized Real-Time Sync Engine -->
-    <script src="https://cdn.jsdelivr.net/npm/gun/gun.js"></script>
+    
     <style>
         body { 
             font-family: 'Inter', sans-serif; 
@@ -18,7 +17,7 @@
         .gradient-bg { 
             background: linear-gradient(135deg, #f0fdf4 0%, #fef3c7 100%); 
         }
-        /* Elegant custom scrollbar */
+        /* Custom scrollbar styling for list containers */
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
@@ -48,22 +47,22 @@
 </head>
 <body class="bg-gray-50 text-gray-900 flex flex-col min-h-screen">
 
-    <!-- Custom Notification Toast -->
+    <!-- Custom Real-Time Notification Toast -->
     <div id="toast" class="fixed top-5 right-5 bg-green-600 text-white px-6 py-3 rounded-xl shadow-2xl z-50 transform translate-y-[-100px] opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3">
         <span id="toast-icon" class="font-bold text-lg">✓</span>
         <span id="toast-message" class="font-medium">Notification message here</span>
     </div>
 
-    <!-- Navigation Bar -->
+    <!-- Sticky Navigation Header Bar -->
     <nav class="bg-white shadow-md sticky top-0 z-50 border-b-4 border-green-600" id="app-nav">
         <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-3">
             <div class="flex items-center gap-3">
                 <button onclick="showView('home')" class="text-3xl font-extrabold tracking-tight flex items-baseline focus:outline-none">
                     <span class="text-red-600">DAY</span><span class="text-yellow-500">2</span><span class="text-green-600">DAY</span> <span class="text-xs text-red-600 font-semibold ml-2">Vennikkulam</span>
                 </button>
-                <!-- Cloud Status Dot Indicator -->
+                <!-- Firebase Real-Time Synchronization State Status Indicator -->
                 <span id="db-status" class="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-yellow-100 text-yellow-800 transition-all duration-300">
-                    <span class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></span> Connecting...
+                    <span class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></span> Connecting to Cloud...
                 </span>
             </div>
             <div class="space-x-2 md:space-x-4 flex items-center font-medium text-sm sm:text-base">
@@ -459,17 +458,6 @@
                         </button>
                     </div>
 
-                    <!-- WhatsApp Notification Redirection -->
-                    <div class="flex items-center justify-between gap-4 border-t pt-6">
-                        <div>
-                            <span class="font-bold text-gray-800 block">WhatsApp Order Dispatch</span>
-                            <span class="text-xs text-gray-500 block">Open kitchen WhatsApp thread (+91 90611 70906) automatically on placement.</span>
-                        </div>
-                        <button onclick="toggleWhatsAppDispatch()" id="whatsapp-dispatch-btn" class="px-5 py-2.5 bg-gray-500 hover:bg-gray-655 text-white font-bold rounded-full transition shadow-sm text-xs md:text-sm whitespace-nowrap">
-                            DISPATCH DISABLED
-                        </button>
-                    </div>
-
                     <!-- Security/Password Change Settings -->
                     <div class="border-t pt-6 space-y-4">
                         <div>
@@ -527,6 +515,16 @@
         <p>&copy; 2026 <span class="text-red-500 font-semibold">DAY</span><span class="text-yellow-500 font-semibold">2</span><span class="text-green-500 font-semibold">DAY</span> Vennikkulam. All Rights Reserved. Crafted with authentic tradition.</p>
     </footer>
 
+    <!-- Floating WhatsApp Support Button -->
+    <a href="https://wa.me/919061170906?text=Hello%20DAY2DAY%20Restaurant!%20I'd%20like%20to%20make%20a%20general%20inquiry%20or%20place%20a%20special%20catering%2520order." 
+       target="_blank" 
+       class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white font-bold p-4 rounded-full shadow-2xl z-40 transition duration-300 transform hover:scale-110 flex items-center gap-2 border-2 border-white">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.528 1.977 14.07 1.05 11.478 1.05c-5.44 0-9.866 4.372-9.87 9.802 0 1.714.453 3.39 1.313 4.877L1.87 20.36l4.777-1.206zM17.56 14.16c-.303-.15-1.793-.88-2.073-.982-.28-.102-.484-.15-.686.152-.204.304-.785.982-.962 1.185-.178.203-.355.228-.658.077-.303-.15-1.28-.472-2.438-1.503-.9-.802-1.507-1.793-1.684-2.097-.177-.302-.018-.467.133-.617.136-.134.303-.354.454-.53.15-.177.2-.303.3-.505.1-.202.05-.38-.025-.53-.075-.15-.687-1.656-.942-2.27c-.247-.593-.5-1.12-.686-1.13h-.58c-.2 0-.526.075-.802.375-.276.3-.1.526-.1.826 0 .3.2.526.225.556.025.03 2.12 3.237 5.136 4.542.717.31 1.277.495 1.713.633.72.227 1.376.195 1.895.118.578-.085 1.793-.732 2.047-1.438.254-.706.254-1.314.178-1.44-.076-.124-.28-.203-.58-.353z"/>
+        </svg>
+        <span class="text-sm font-bold">Contact Us for Orders</span>
+    </a>
+
     <!-- Food Item Detail / Placement Modal -->
     <div id="item-modal" class="fixed inset-0 bg-black bg-opacity-60 hidden z-50 flex items-center justify-center p-4 overflow-y-auto">
         <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden relative shadow-2xl my-8 transform transition-transform duration-300">
@@ -567,7 +565,7 @@
 
                 <div class="space-y-2">
                     <button id="submit-order-btn" onclick="submitOrder()" class="w-full bg-green-600 text-white py-4 rounded-full font-bold hover:bg-green-700 transition shadow-lg text-lg flex items-center justify-center gap-2 transform active:scale-95">
-                        <span>Place Order</span>
+                        <span>Place Direct Order Hot 🍲</span>
                         <span id="modal-order-total" class="bg-green-800 text-white text-xs px-3 py-1 rounded-full font-black">₹0</span>
                     </button>
                     <button onclick="closeModal()" class="w-full text-gray-500 font-bold text-sm text-center py-2 hover:text-red-600 transition">Cancel</button>
@@ -582,7 +580,7 @@
             <div class="w-20 h-20 bg-green-100 text-green-600 text-5xl rounded-full flex items-center justify-center mx-auto">✓</div>
             <div>
                 <h4 class="text-2xl font-bold text-green-800">Order Placed!</h4>
-                <p class="text-gray-500 text-sm mt-1">Our live kitchen has received your ticket and is preparing it hot!</p>
+                <p class="text-gray-500 text-sm mt-1">Our live kitchen has received your ticket and is preparing it hot! You can track progress on the dashboard.</p>
             </div>
             <button onclick="closeSuccessModal()" class="w-full bg-green-600 text-white py-3 rounded-full font-bold hover:bg-green-700 transition">Awesome</button>
         </div>
@@ -603,12 +601,15 @@
         </div>
     </div>
 
-    <!-- Consolidated JavaScript Application Code -->
-    <script>
-        // Global State Objects
+    <!-- Firebase Imports and Database Persistence Setup -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, onSnapshot, initializeFirestore, persistentLocalCache, persistentMultipleTabManager } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Global state objects
         window.isKitchenOpen = true;
         window.isAlertSoundEnabled = true;
-        window.isWhatsAppDispatchEnabled = false;
         window.adminPassword = '8590';
         window.itemIndexToDelete = null;
         window.currentMenuFilter = 'all';
@@ -621,7 +622,7 @@
         window.selectedFlavor = 'Normal'; // Default flavor for Alfahm
         window.syncRoomId = localStorage.getItem('syncRoomId') || 'DAY2DAY-PTA-8590';
 
-        // Default seeds if database is empty on start (Vellayappam, Palappam & Rice Items)
+        // Static seed data when database initializes
         const defaultMenuItems = [
             { id: 1, displayName: "Vellayappam", price: "₹7", category: "main", desc: "Soft, spongy traditional fermented rice pancake.", available: true },
             { id: 2, displayName: "Pathiri", price: "₹6", category: "main", desc: "Thin, soft rice flour flatbread.", available: true },
@@ -633,247 +634,138 @@
             { id: 8, displayName: "Alfahm", price: "₹120", category: "main", desc: "Juicy charcoal grilled chicken marinated in Arabian spices. Available in Normal, Kanthari, or Peri Peri. Price represents Quarter portion.", available: true }
         ];
 
-        // GunDB peer network array initialization for zero-config mesh syncing
-        let gun = null;
-        let p2pRoom = null;
+        // Unique Web App Identifier for Firestore Path Matching (RULE 1)
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'day2day-vennikulam';
 
-        function initP2PSync() {
+        // Firebase Configuration (Uses dynamic workspace config or local fallback)
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {
+            apiKey: "",
+            authDomain: "day2day-vennikulam.firebaseapp.com",
+            projectId: "day2day-vennikulam",
+            storageBucket: "day2day-vennikulam.appspot.com",
+            messagingSenderId: "123456789012",
+            appId: "1:123456789012:web:a1b2c3d4e5f6g7h8i9j0"
+        };
+
+        // Initialize Firebase Apps and Firestore
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        
+        // Multi-tab local persistent cache setup for smooth offline usage
+        const db = initializeFirestore(app, {
+            localCache: persistentLocalCache({
+                tabManager: persistentMultipleTabManager()
+            })
+        });
+
+        let currentUnsubscribe = null;
+
+        // Authenticate client user before queries (RULE 3)
+        async function runAuthentication() {
             try {
-                // Initialize GunDB client using public relay node peers
-                if (typeof Gun === 'undefined') {
-                    throw new Error("Gun framework CDN did not load.");
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
                 }
+            } catch (err) {
+                console.error("Firebase Auth failure, utilizing offline cached state:", err);
+            }
+        }
 
-                gun = Gun({
-                    peers: [
-                        'https://gun-manhattan.herokuapp.com/gun',
-                        'https://gundb.herokuapp.com/gun'
-                    ]
-                });
+        // Setup real-time listeners for active room document
+        window.loadCloudRoomData = async function() {
+            if (currentUnsubscribe) {
+                currentUnsubscribe();
+            }
 
-                p2pRoom = gun.get(window.syncRoomId);
+            const statusBadge = document.getElementById('db-status');
+            if (statusBadge) {
+                statusBadge.className = "flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-yellow-100 text-yellow-800 transition-all duration-300";
+                statusBadge.innerHTML = `<span class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></span> Syncing with Cloud...`;
+            }
 
-                // Setup Listeners
-                p2pRoom.get('menuItems').on((data) => {
-                    if (data) {
-                        try {
-                            const parsed = JSON.parse(data);
-                            if (JSON.stringify(window.menuItems) !== data) {
-                                window.menuItems = parsed;
-                                renderMenu();
-                                renderAdminMenuList();
-                                localStorage.setItem('backupMenu', data);
-                            }
-                        } catch (e) { console.error("Menu parse error:", e); }
-                    }
-                });
+            // RULE 1: STRICT Firestore Path Mapping
+            const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'rooms', window.syncRoomId);
 
-                let firstLoad = true;
-                p2pRoom.get('orders').on((data) => {
-                    if (data) {
-                        try {
-                            const parsed = JSON.parse(data);
-                            if (JSON.stringify(window.orders) !== data) {
-                                let oldLength = Array.isArray(window.orders) ? window.orders.length : 0;
-                                window.orders = parsed;
-                                if (!Array.isArray(window.orders)) window.orders = [];
-                                
-                                renderAdminOrders();
-                                renderSalesHistory();
-                                updateNavbarOrderBadge();
-                                localStorage.setItem('backupOrders', data);
-
-                                // Trigger chime if a new order arrives from another computer
-                                if (!firstLoad && window.orders.length > oldLength) {
-                                    playChime();
-                                    showToast("New live order ticket received!", true);
-                                }
-                            }
-                        } catch (e) { console.error("Order sync parse error:", e); }
-                    }
-                    firstLoad = false;
-                });
-
-                p2pRoom.get('settings').on((data) => {
-                    if (data) {
-                        try {
-                            const settings = JSON.parse(data);
-                            window.isKitchenOpen = settings.isKitchenOpen !== undefined ? settings.isKitchenOpen : true;
-                            window.isAlertSoundEnabled = settings.isAlertSoundEnabled !== undefined ? settings.isAlertSoundEnabled : true;
-                            window.isWhatsAppDispatchEnabled = settings.isWhatsAppDispatchEnabled !== undefined ? settings.isWhatsAppDispatchEnabled : false;
-                            window.adminPassword = settings.adminPassword || '8590';
-                            
-                            updateSettingsTabUI();
-                            updateKitchenClosedBanner();
-                        } catch (e) { console.error("Settings sync parse error:", e); }
-                    }
-                });
-
-                // Update UI badge to show cloud status
-                const statusBadge = document.getElementById('db-status');
+            currentUnsubscribe = onSnapshot(docRef, (snapshot) => {
                 if (statusBadge) {
                     statusBadge.className = "flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-green-100 text-green-800 transition-all duration-300";
                     statusBadge.innerHTML = `<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Live Synced`;
                 }
-            } catch (error) {
-                console.warn("P2P Mesh connection offline or fallback activated:", error.message);
-                const statusBadge = document.getElementById('db-status');
-                if (statusBadge) {
-                    statusBadge.className = "flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-red-100 text-red-800 transition-all duration-300";
-                    statusBadge.innerHTML = `<span class="w-2 h-2 rounded-full bg-red-500"></span> Local Backup Mode`;
+
+                let state = snapshot.exists() ? snapshot.data() : null;
+
+                if (!state) {
+                    // Initialize empty cloud rooms immediately with default seeds
+                    window.menuItems = [...defaultMenuItems];
+                    window.orders = [];
+                    window.isKitchenOpen = true;
+                    window.isAlertSoundEnabled = true;
+                    window.adminPassword = '8590';
+                    window.saveRoomStateToCloud();
+                    return;
                 }
-                loadLocalStorageBackup();
-            }
-        }
 
-        // Offline storage recovery mechanism
-        function loadLocalStorageBackup() {
-            try {
-                window.menuItems = JSON.parse(localStorage.getItem('backupMenu')) || [...defaultMenuItems];
-                window.orders = JSON.parse(localStorage.getItem('backupOrders')) || [];
-                if (!Array.isArray(window.orders)) window.orders = [];
-            } catch(e) {
-                window.menuItems = [...defaultMenuItems];
-                window.orders = [];
-            }
-            renderMenu();
-            renderAdminMenuList();
-            renderAdminOrders();
-            renderSalesHistory();
-            updateNavbarOrderBadge();
-            updateKitchenClosedBanner();
-        }
+                // Check for updates and trigger sounds
+                let oldLength = Array.isArray(window.orders) ? window.orders.length : 0;
+                window.menuItems = state.menuItems || [...defaultMenuItems];
+                window.orders = state.orders || [];
+                window.isKitchenOpen = state.isKitchenOpen !== undefined ? state.isKitchenOpen : true;
+                window.isAlertSoundEnabled = state.isAlertSoundEnabled !== undefined ? state.isAlertSoundEnabled : true;
+                window.adminPassword = state.adminPassword || '8590';
 
-        // Push settings globally to GunDB Mesh
-        window.saveSettingsToCloud = function() {
-            const settingsObj = {
-                isKitchenOpen: window.isKitchenOpen,
-                isAlertSoundEnabled: window.isAlertSoundEnabled,
-                isWhatsAppDispatchEnabled: window.isWhatsAppDispatchEnabled,
-                adminPassword: window.adminPassword
-            };
-            if (p2pRoom) {
-                try {
-                    p2pRoom.get('settings').put(JSON.stringify(settingsObj));
-                } catch (e) { console.error("Error putting setting configs:", e); }
-            }
-            updateSettingsTabUI();
-            updateKitchenClosedBanner();
-        }
-
-        // Push orders globally to GunDB Mesh
-        window.submitOrderCloud = function(newTicket) {
-            if (!Array.isArray(window.orders)) {
-                window.orders = [];
-            }
-            window.orders.push(newTicket);
-            const dataStr = JSON.stringify(window.orders);
-            localStorage.setItem('backupOrders', dataStr);
-            if (p2pRoom) {
-                try {
-                    p2pRoom.get('orders').put(dataStr);
-                } catch (e) { console.error("Error updating synced order packet:", e); }
-            }
-            renderAdminOrders();
-            renderSalesHistory();
-            updateNavbarOrderBadge();
-        }
-
-        // Advance Order Status globally
-        window.advanceOrderCloud = function(id, nextStatus) {
-            if (!Array.isArray(window.orders)) return;
-            const o = window.orders.find(item => item.id === id);
-            if (o) {
-                o.status = nextStatus;
-                const dataStr = JSON.stringify(window.orders);
-                localStorage.setItem('backupOrders', dataStr);
-                if (p2pRoom) {
-                    try {
-                        p2pRoom.get('orders').put(dataStr);
-                    } catch (e) { console.error("Error setting synchronized order state:", e); }
-                }
+                // Repopulate views
+                renderMenu();
+                renderAdminMenuList();
                 renderAdminOrders();
                 renderSalesHistory();
-            }
-        }
+                updateSettingsTabUI();
+                updateKitchenClosedBanner();
+                updateNavbarOrderBadge();
 
-        // Delete order records permanently
-        window.deleteOrderCloud = function(id) {
-            if (!Array.isArray(window.orders)) return;
-            window.orders = window.orders.filter(item => item.id !== id);
-            const dataStr = JSON.stringify(window.orders);
-            localStorage.setItem('backupOrders', dataStr);
-            if (p2pRoom) {
-                try {
-                    p2pRoom.get('orders').put(dataStr);
-                } catch (e) { console.error("Error purging synced order:", e); }
-            }
-            renderAdminOrders();
-            renderSalesHistory();
-        }
-
-        // Add menu item globally
-        window.addFoodItemCloud = function(newItem) {
-            window.menuItems.push(newItem);
-            const dataStr = JSON.stringify(window.menuItems);
-            localStorage.setItem('backupMenu', dataStr);
-            if (p2pRoom) {
-                try {
-                    p2pRoom.get('menuItems').put(dataStr);
-                } catch (e) { console.error("Error adding catalog item:", e); }
-            }
-            renderMenu();
-            renderAdminMenuList();
-        }
-
-        // Update menu item price globally
-        window.updateMenuPriceCloud = function(id, newPrice) {
-            const item = window.menuItems.find(i => i.id === id);
-            if (item) {
-                item.price = newPrice;
-                const dataStr = JSON.stringify(window.menuItems);
-                localStorage.setItem('backupMenu', dataStr);
-                if (p2pRoom) {
-                    try {
-                        p2pRoom.get('menuItems').put(dataStr);
-                    } catch (e) { console.error("Error updating price item:", e); }
+                if (window.orders.length > oldLength && oldLength > 0) {
+                    playChime();
+                    showToast("New live order ticket received!", true);
                 }
-                renderMenu();
-                renderAdminMenuList();
-            }
-        }
 
-        // Update menu item availability status globally
-        window.toggleFoodAvailabilityCloud = function(id) {
-            const item = window.menuItems.find(i => i.id === id);
-            if (item) {
-                item.available = (item.available === undefined) ? false : !item.available;
-                const dataStr = JSON.stringify(window.menuItems);
-                localStorage.setItem('backupMenu', dataStr);
-                if (p2pRoom) {
-                    try {
-                        p2pRoom.get('menuItems').put(dataStr);
-                    } catch (e) { console.error("Error toggling stock:", e); }
+            }, (err) => {
+                console.error("Firestore sync subscription issue:", err);
+                if (statusBadge) {
+                    statusBadge.className = "flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-red-100 text-red-800 transition-all duration-300";
+                    statusBadge.innerHTML = `<span class="w-2 h-2 rounded-full bg-red-500"></span> Offline Cache Mode`;
                 }
-                renderMenu();
-                renderAdminMenuList();
-            }
-        }
+            });
+        };
 
-        // Delete menu item globally
-        window.deleteFoodItemCloud = function(id) {
-            window.menuItems = window.menuItems.filter(i => i.id !== id);
-            const dataStr = JSON.stringify(window.menuItems);
-            localStorage.setItem('backupMenu', dataStr);
-            if (p2pRoom) {
-                try {
-                    p2pRoom.get('menuItems').put(dataStr);
-                } catch (e) { console.error("Error deleting catalog item:", e); }
+        // Write operational structures back to Firestore Doc
+        window.saveRoomStateToCloud = async function() {
+            try {
+                // RULE 1: Strict Paths
+                const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'rooms', window.syncRoomId);
+                const payload = {
+                    menuItems: window.menuItems || [...defaultMenuItems],
+                    orders: window.orders || [],
+                    isKitchenOpen: window.isKitchenOpen,
+                    isAlertSoundEnabled: window.isAlertSoundEnabled,
+                    adminPassword: window.adminPassword,
+                    lastModified: Date.now()
+                };
+                await setDoc(docRef, payload, { merge: true });
+            } catch (err) {
+                console.error("Firestore push failed, cached locally:", err);
             }
-            renderMenu();
-            renderAdminMenuList();
-        }
+        };
 
+        // Initialize sync process on document lifecycle start
+        window.addEventListener('DOMContentLoaded', async () => {
+            await runAuthentication();
+            window.loadCloudRoomData();
+        });
+    </script>
+
+    <!-- Consolidated Client-Side JS Core Logic -->
+    <script>
         // Update room key handler inside settings panel
         window.updateSyncRoomId = function() {
             const customKey = document.getElementById('sync-room-id').value.trim().toUpperCase();
@@ -884,7 +776,9 @@
             window.syncRoomId = customKey;
             localStorage.setItem('syncRoomId', customKey);
             showToast(`Sync Room updated to: ${customKey}! Reconnecting...`, true);
-            initP2PSync();
+            if (window.loadCloudRoomData) {
+                window.loadCloudRoomData();
+            }
         }
 
         // Relative Time Indicators
@@ -972,7 +866,7 @@
             const text = document.getElementById('toast-message');
 
             toast.className = isSuccess 
-                ? "fixed top-5 right-5 bg-green-600 text-white px-6 py-3 rounded-xl shadow-2xl z-50 transform transition-all duration-300 flex items-center gap-3 animate-pulse" 
+                ? "fixed top-5 right-5 bg-green-600 text-white px-6 py-3 rounded-xl shadow-2xl z-50 transform transition-all duration-300 flex items-center gap-3" 
                 : "fixed top-5 right-5 bg-red-600 text-white px-6 py-3 rounded-xl shadow-2xl z-50 transform transition-all duration-300 flex items-center gap-3";
 
             icon.innerText = isSuccess ? "✓" : "⚠️";
@@ -1149,7 +1043,10 @@
             document.querySelectorAll('.cat-btn').forEach(btn => {
                 btn.className = "cat-btn px-4 py-2 rounded-full font-bold text-sm bg-gray-100 text-gray-700 hover:bg-gray-200 transition";
             });
-            document.getElementById(`cat-${category}`).className = "cat-btn px-4 py-2 rounded-full font-bold text-sm bg-green-700 text-white transition";
+            const activeBtn = document.getElementById(`cat-${category}`);
+            if (activeBtn) {
+                activeBtn.className = "cat-btn px-4 py-2 rounded-full font-bold text-sm bg-green-700 text-white transition";
+            }
             renderMenu();
         }
 
@@ -1322,16 +1219,11 @@
             
             const totalBadge = document.getElementById('modal-order-total');
             if (totalBadge) {
-                if (isRice) {
-                    totalBadge.classList.add('hidden');
-                } else {
-                    totalBadge.classList.remove('hidden');
-                    totalBadge.innerText = '₹' + calculatedTotal;
-                }
+                totalBadge.innerText = '₹' + calculatedTotal;
             }
         }
 
-        // Hardened Order Submission Flow with validations and defensive catch guards
+        // Direct Order Placement Flow - NO WHATSAPP REDIRECTS
         function submitOrder() {
             if (!window.selectedItem) {
                 showToast("Please choose a food item first!", false);
@@ -1403,19 +1295,14 @@
                 status: "pending"
             };
 
-            // Trigger the P2P and Local Storage database pipelines
-            if (window.submitOrderCloud) {
-                window.submitOrderCloud(newTicket);
+            // Inject ticket into cloud array and write
+            if (!Array.isArray(window.orders)) {
+                window.orders = [];
             }
-
-            // Optional direct WhatsApp kitchen alert routing
-            if (window.isWhatsAppDispatchEnabled) {
-                const kitchenPhone = "919061170906";
-                const portionLabel = isRice 
-                    ? (newTicket.qty === 'Q' ? 'Quarter' : newTicket.qty === 'H' ? 'Half' : 'Full') 
-                    : `${newTicket.qty} Nos`;
-                const textMessage = `*NEW ORDER - DAY2DAY PTA*%0A---------------------------%0A🍛 *Dish:* ${newTicket.name}%0A🔢 *Portion / Qty:* ${portionLabel}%0A💰 *Total:* ${newTicket.price}%0A👤 *Name:* ${newTicket.table}%0A📝 *Notes:* ${newTicket.notes || 'None'}%0A🕒 *Time:* ${newTicket.time}`;
-                window.open(`https://api.whatsapp.com/send?phone=${kitchenPhone}&text=${textMessage}`, '_blank');
+            window.orders.push(newTicket);
+            
+            if (window.saveRoomStateToCloud) {
+                window.saveRoomStateToCloud();
             }
 
             closeModal();
@@ -1532,17 +1419,24 @@
         }
 
         function advanceOrder(id, nextStatus) {
-            if (window.advanceOrderCloud) {
-                window.advanceOrderCloud(id, nextStatus);
+            if (!Array.isArray(window.orders)) return;
+            const o = window.orders.find(item => item.id === id);
+            if (o) {
+                o.status = nextStatus;
+                if (window.saveRoomStateToCloud) {
+                    window.saveRoomStateToCloud();
+                }
                 showToast(nextStatus === 'archived' ? "Order logged into history catalog!" : "Status updated successfully!", true);
             }
         }
 
         function deleteOrder(id) {
-            if (window.deleteOrderCloud) {
-                window.deleteOrderCloud(id);
-                showToast("Order ticket dismissed.", true);
+            if (!Array.isArray(window.orders)) return;
+            window.orders = window.orders.filter(item => item.id !== id);
+            if (window.saveRoomStateToCloud) {
+                window.saveRoomStateToCloud();
             }
+            showToast("Order ticket dismissed.", true);
         }
 
         // Render Permanent Sales Ledger
@@ -1690,9 +1584,12 @@
 
         // Availability Toggle trigger
         window.toggleFoodAvailability = function(id) {
-            if (window.toggleFoodAvailabilityCloud) {
-                window.toggleFoodAvailabilityCloud(id);
-                const item = window.menuItems.find(i => i.id === id);
+            const item = window.menuItems.find(i => i.id === id);
+            if (item) {
+                item.available = (item.available === undefined) ? false : !item.available;
+                if (window.saveRoomStateToCloud) {
+                    window.saveRoomStateToCloud();
+                }
                 const availabilityText = (item.available !== false) ? "In Stock" : "Sold Out";
                 showToast(`"${item.displayName}" status set to: ${availabilityText}!`, true);
             }
@@ -1712,14 +1609,13 @@
             if (!price.startsWith('₹')) price = '₹' + price;
 
             const newId = window.menuItems.length > 0 ? Math.max(...window.menuItems.map(item => item.id)) + 1 : 1;
-            
-            // Default new items to true (Available)
             const newItem = { id: newId, displayName: name, price: price, category: category, desc: desc, available: true };
 
-            if (window.addFoodItemCloud) {
-                window.addFoodItemCloud(newItem);
-                showToast(`"${name}" was successfully added to your digital menu!`, true);
+            window.menuItems.push(newItem);
+            if (window.saveRoomStateToCloud) {
+                window.saveRoomStateToCloud();
             }
+            showToast(`"${name}" was successfully added to your digital menu!`, true);
 
             document.getElementById('add-food-name').value = '';
             document.getElementById('add-food-price').value = '₹';
@@ -1735,8 +1631,11 @@
             const cleanPrice = newPrice.startsWith('₹') ? newPrice : '₹' + newPrice;
             const item = window.menuItems[index];
 
-            if (window.updateMenuPriceCloud) {
-                window.updateMenuPriceCloud(item.id, cleanPrice);
+            if (item) {
+                item.price = cleanPrice;
+                if (window.saveRoomStateToCloud) {
+                    window.saveRoomStateToCloud();
+                }
                 showToast(`Saved changes for ${item.displayName}!`, true);
             }
         }
@@ -1756,11 +1655,12 @@
         function executeDeleteFoodItem() {
             if (window.itemIndexToDelete !== null) {
                 const item = window.menuItems[window.itemIndexToDelete];
-                if (window.deleteFoodItemCloud) {
-                    window.deleteFoodItemCloud(item.id);
-                    closeDeleteModal();
-                    showToast(`"${item.displayName}" removed.`, true);
+                window.menuItems = window.menuItems.filter(i => i.id !== item.id);
+                if (window.saveRoomStateToCloud) {
+                    window.saveRoomStateToCloud();
                 }
+                closeDeleteModal();
+                showToast(`"${item.displayName}" removed.`, true);
             }
         }
 
@@ -1818,51 +1718,40 @@
         // Settings Panel Status Toggles
         function toggleKitchenStatus() {
             window.isKitchenOpen = !window.isKitchenOpen;
-            saveSettingsToCloud();
+            if (window.saveRoomStateToCloud) {
+                window.saveRoomStateToCloud();
+            }
             showToast(window.isKitchenOpen ? "Kitchen is Open!" : "Kitchen Closed.", true);
         }
 
         function toggleAlertSound() {
             window.isAlertSoundEnabled = !window.isAlertSoundEnabled;
-            saveSettingsToCloud();
+            if (window.saveRoomStateToCloud) {
+                window.saveRoomStateToCloud();
+            }
             showToast(window.isAlertSoundEnabled ? "Chime alerts active!" : "Chime muted.", true);
-        }
-
-        function toggleWhatsAppDispatch() {
-            window.isWhatsAppDispatchEnabled = !window.isWhatsAppDispatchEnabled;
-            saveSettingsToCloud();
-            showToast(window.isWhatsAppDispatchEnabled ? "WhatsApp dispatcher enabled!" : "WhatsApp dispatcher disabled.", true);
         }
 
         function updateSettingsTabUI() {
             const kitchenBtn = document.getElementById('kitchen-status-btn');
             const soundBtn = document.getElementById('sound-status-btn');
-            const waBtn = document.getElementById('whatsapp-dispatch-btn');
 
-            if (!kitchenBtn || !soundBtn || !waBtn) return;
+            if (!kitchenBtn || !soundBtn) return;
 
             if (window.isKitchenOpen) {
                 kitchenBtn.innerText = "KITCHEN OPEN";
-                kitchenBtn.className = "px-6 py-2.5 bg-green-600 hover:bg-green-700 text-white font-bold rounded-full transition shadow-sm text-sm whitespace-nowrap";
+                kitchenBtn.className = "px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white font-bold rounded-full transition shadow-sm text-xs md:text-sm whitespace-nowrap";
             } else {
                 kitchenBtn.innerText = "KITCHEN CLOSED";
-                kitchenBtn.className = "px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full transition shadow-sm text-sm whitespace-nowrap";
+                kitchenBtn.className = "px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full transition shadow-sm text-xs md:text-sm whitespace-nowrap";
             }
 
             if (window.isAlertSoundEnabled) {
                 soundBtn.innerText = "ALERT CHIME ACTIVE";
-                soundBtn.className = "px-6 py-2.5 bg-green-600 hover:bg-green-700 text-white font-bold rounded-full transition shadow-sm text-sm whitespace-nowrap";
+                soundBtn.className = "px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white font-bold rounded-full transition shadow-sm text-xs md:text-sm whitespace-nowrap";
             } else {
                 soundBtn.innerText = "ALERT CHIME SILENT";
-                soundBtn.className = "px-6 py-2.5 bg-gray-500 hover:bg-gray-655 text-white font-bold rounded-full transition shadow-sm text-sm whitespace-nowrap";
-            }
-
-            if (window.isWhatsAppDispatchEnabled) {
-                waBtn.innerText = "DISPATCH ACTIVE";
-                waBtn.className = "px-6 py-2.5 bg-green-600 hover:bg-green-700 text-white font-bold rounded-full transition shadow-sm text-sm whitespace-nowrap";
-            } else {
-                waBtn.innerText = "DISPATCH DISABLED";
-                waBtn.className = "px-6 py-2.5 bg-gray-500 hover:bg-gray-655 text-white font-bold rounded-full transition shadow-sm text-sm whitespace-nowrap";
+                soundBtn.className = "px-5 py-2.5 bg-gray-500 hover:bg-gray-600 text-white font-bold rounded-full transition shadow-sm text-xs md:text-sm whitespace-nowrap";
             }
         }
 
@@ -1881,7 +1770,9 @@
             }
 
             window.adminPassword = newPass;
-            saveSettingsToCloud();
+            if (window.saveRoomStateToCloud) {
+                window.saveRoomStateToCloud();
+            }
             document.getElementById('new-admin-password').value = '';
             document.getElementById('confirm-admin-password').value = '';
             showToast("Password updated successfully!", true);
@@ -1892,10 +1783,8 @@
             if (syncIdInput) {
                 syncIdInput.value = window.syncRoomId;
             }
-            loadLocalStorageBackup();
-            initP2PSync();
 
-            // Set background timer loop to auto-refresh order timers
+            // Set background timer loop to auto-refresh order timers every 30 seconds
             setInterval(() => {
                 const adminView = document.getElementById('admin-view');
                 if (adminView && !adminView.classList.contains('hidden')) {
